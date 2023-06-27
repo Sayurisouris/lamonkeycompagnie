@@ -285,6 +285,7 @@ footer .footer-bottom a {
     width: 100%;
     height: auto;
     padding:8px;
+    display: block;
     
   } 
   .metro {
@@ -295,4 +296,55 @@ footer .footer-bottom a {
   .metro-container {
     text-align: center;
     transform: translateY(-10px);
+  }
+  .pfp-mobile{
+    display: none;
+  }
+
+  @media screen and (max-width: 768px){
+    header{
+      position: fixed;
+      z-index: 2;
+    }
+    .gradient{
+      position:fixed;
+    }
+    section{
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      position: relative;
+    }
+    .main{
+      width:90%;
+      margin-top: 55%;
+    }
+    .histoire .card{
+      width:100%;
+    }
+    .equipe .card{
+      width:100%;
+      flex-direction: column;
+    }
+    .planning{
+      display: flex;
+      overflow-x: scroll;
+      justify-content: space-between;
+      width:100%;
+    }
+    .date{
+      margin:0 10%;
+    }
+    .planningText{
+      display: flex;
+      margin:0 10%;
+      width:auto;
+      white-space: nowrap;
+    }
+    .equipe img{
+      width: 100%;
+      border-radius: 20px;
+      margin-right: 11px;
+      margin-bottom: 11px;
+      height: auto;
+    }
   }
