@@ -203,30 +203,25 @@ footer .footer-bottom a {
   
   }
   .main {
-    width: 60%;
+    width: 75%;
     margin: auto;
   }
 
-  .histoire .card {
-    width: 60%;
+  .histoire {
+    background: linear-gradient(to bottom, #0A8754 2px, white 1px, white calc(100% - 2px), #0A8754 calc(100% - 1px)) no-repeat, linear-gradient(to left, #0A8754 2px, white 1px, white calc(100% - 2px), #0A8754 calc(100% - 1px)) no-repeat;
+    background-position: center;
+    background-size: calc(100% - 2em) 100%, 100% calc(100% - 2em);
     margin:auto;
-    height: max-content;
-    border-radius: 20px;
-    padding: 7px;
-    margin-bottom: 40px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-    background-image: linear-gradient(144deg,#FFDFC2, #BF455B );
-  }
-  
-  .histoire .card__content {
-    background: rgba(255, 255, 255, 0.524);
-    border-radius: 17px;
     width: 100%;
-    height:max-content;
-    padding:8px;
-    
+    height: max-content;
+    padding: 9px;
+    margin-bottom: 40px;
+    margin-left: 15px;
+    margin-bottom: 200px;
   }
- .histoire p, .equipe p{
+
+  
+ .histoire p{
   color:#402927;
   width:100%;
   text-align:center;
@@ -236,58 +231,69 @@ footer .footer-bottom a {
   
   }
   .histoire h4 {
-    color:#402927;
+    color: #f2d5bb;
+    border-color: white;
   width:100%;
-  text-align:center;
+  text-align:left;
   padding: 17px;
-  font-size: 1.1em;
-  font-family: 'GoboldUplow';
+  font-size: 2em;
+  font-style: italic;
+  margin-bottom: 1em;
+  font-family: 'Nunito';
   }
-  
-  .equipe h4 {
-    color:#402927;
-  width:100%;
-  text-align:center;
-  padding-top: 17px;
-  font-size: 1.1em;
-  font-family: 'GoboldUplow';
-  }
-  
-  .equipe h5 {
-    color:#402927;
-  width:100%;
-  text-align:center;
-  padding: 6px;
-  font-size: 0.9em;
-  font-family: 'GoboldUplow';
-  }
-  .equipe img{
-    width: 25%;
-    border-radius: 20px;
-    margin-right: 11px;
-    height: auto;
-  }
-  .equipe .card {
-    margin:auto;
+
+  /* bloc equipe */
+
+  .equipe_container {
     display: flex;
-    flex-direction: row;
-    height: max-content;
-    border-radius: 20px;
-    padding: 7px;
-    margin-bottom: 75px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-    background-image: linear-gradient(144deg,#BF455B, #FFDFC2 );
-  }
-  
-  .equipe .card__content {
-    background: rgba(255, 255, 255, 0.524);
-    border-radius: 17px;
-    width: 100%;
-    height: auto;
-    padding:8px;
-    display: block;
+    justify-content: space-between;
+    height: 800px;
     
-  } 
+  }
+
+  .equipe{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0,0, 0.5);
+    transition: 0,3s;
+    padding: 30px 50px ;
+    background: #fff;
+    cursor:pointer;
+
+}
+.imgbox_equipe{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-120px);
+    z-index: 99;
+}
+.img_equipe{
+    width: 100%;
+    max-height: 250px;
+    border-radius: 10px;
+    box-shadow:0px 5px 20px rgba(0, 0,0, 0.5); ;
+}
+.content_equipe{
+    text-align: center;
+    transform: translateY(-580px);
+    opacity: 0;
+    transition: 0,3s;
+}
+.equipe:hover{
+    height: 800px;
+
+}
+.equipe:hover > .content_equipe{
+opacity: 1;
+}
+.content_equipe h2{
+    color:#D7B49E;
+    ;
+}
+   
   .metro {
     list-style-image: url(images/metro.png);
     font-family: 'Nunito';
@@ -296,6 +302,43 @@ footer .footer-bottom a {
   .metro-container {
     text-align: center;
     transform: translateY(-10px);
+  }
+
+  button {
+    --green: #C6249;
+    font-size: 15px;
+    padding: 0.7em 2.7em;
+    letter-spacing: 0.06em;
+    position: relative;
+    font-family: inherit;
+    border-radius: 0.6em;
+    overflow: hidden;
+    transition: all 0.3s;
+    line-height: 1.4em;
+    border: 2px solid var(--pink);
+    background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+    color: var(--green);
+    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+  }
+  
+  button:hover {
+    color: #BF455B;
+    box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+  }
+  
+  button:before {
+    content: "";
+    position: absolute;
+    left: -4em;
+    width: 4em;
+    height: 100%;
+    top: 0;
+    transition: transform .4s ease-in-out;
+    background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+  }
+  
+  button:hover:before {
+    transform: translateX(15em);
   }
   .pfp-mobile{
     display: none;
